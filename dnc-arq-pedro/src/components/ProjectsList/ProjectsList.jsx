@@ -7,7 +7,7 @@ import BotaoLikeCurtiu from "../../assets/like-curtiu.svg"
 
 function ProjectsList() {
     return (
-        <div className="project-section">
+        <div className="projects-section">
             <div className="projects-hero">
                 <h2>Follow Our Projects</h2>
                 <p>
