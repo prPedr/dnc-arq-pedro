@@ -16,7 +16,7 @@ function Footer() {
     return (
         <footer>
             <div className="container">
-                <div className="d-flex jc-space-between">
+                <div className="d-flex jc-space-between mobile-fd-column">
                     <div className="footer-col1">
                         <img className="footer-logo" src={LogoDNC} alt="Logo DNC" />
                         <p className="grey-1-color">
