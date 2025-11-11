@@ -1,8 +1,16 @@
+// COMPONENTS
+import Header from "../components/Header/Header"
+import Banner from "../components/Banner/Banner"
+import Footer from "../components/Footer/Footer"
+
 function Contatcts() {
     return (
         <>
-            <h1>Contatcts</h1>
-            <p>Subtitle</p>
+            <Header/>
+            <Banner title="Contact Us" image="contact.svg"/>
+            <div className="container">
+            </div>
+            <Footer/>
         </>
     )
 }

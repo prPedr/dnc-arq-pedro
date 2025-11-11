@@ -1,10 +1,8 @@
-// ASSETS
+// COMPONENTS
 import Header from "../components/Header/Header"
 import Banner from "../components/Banner/Banner"
 import ProjectsList from "../components/ProjectsList/ProjectsList"
 import Footer from "../components/Footer/Footer"
-
-
 
 function Projects() {
     return (
