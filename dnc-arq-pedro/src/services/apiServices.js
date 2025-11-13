@@ -1,4 +1,4 @@
-export const getApiData = async (endpoint, params) => {
+export const getApiData = async (endpoint) => {
     try {
         const url = new URL(`https://dnc-react-api.vercel.app/files/${endpoint}`)
 
