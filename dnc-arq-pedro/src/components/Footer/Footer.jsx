@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { useContext } from "react"
 
 // CSS
 import "./Footer.css"
@@ -12,7 +13,17 @@ import InstagramIcon from "../../assets/instagram-icon.svg"
 import BrazilIcon from "../../assets/brazil-icon.svg"
 import UsaIcon from "../../assets/usa-icon.svg"
 
+// COMPONENT
+import Button from "../Button/Button"
+
+// CONTEXT
+import { AppContext } from "../../contexts/AppContext.jsx"
+
 function Footer() {
+    const appContext = useContext(AppContext)
+    const changeLanguage = (country) => {
+        appContext.setLanguage(country)
+    }
     return (
         <footer>
             <div className="container">
@@ -20,7 +31,7 @@ function Footer() {
                     <div className="footer-col1">
                         <img className="footer-logo" src={LogoDNC} alt="Logo DNC" />
                         <p className="grey-1-color">
-                            A escola que prepara você para as profissões em alta no mercado de trabalho.
+                            {appContext.languages && appContext.languages[appContext.language].general.footerLogoText}
                         </p>
                         <div className="d-flex social-links">
                             <a href="https://google.com" target="_blank">
@@ -39,17 +50,29 @@ function Footer() {
                     </div>
                     <div className="d-flex">
                         <div className="footer-col2">
-                            <h3>Pages</h3>
+                            <h3>
+                                {appContext.languages[appContext.language].general.pages}
+                            </h3>
                             <ul className="d-flex fd-column">
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/about">About us</Link></li>
-                                <li><Link to="/projects">Projects</Link></li>
-                                <li><Link to="/contact">Contact</Link></li>
+                                <li><Link to="/">
+                                    {appContext.languages[appContext.language].menu.home}
+                                </Link></li>
+                                <li><Link to="/about">
+                                    {appContext.languages[appContext.language].menu.about}
+                                </Link></li>
+                                <li><Link to="/projects">
+                                    {appContext.languages[appContext.language].menu.projects}
+                                </Link></li>
+                                <li><Link to="/contact">
+                                    {appContext.languages[appContext.language].menu.contact}
+                                </Link></li>
                             </ul>
                         </div>
                         <div className="footer-col2">
-                            <h3>Contact</h3>
-                            <p className="grey-1-color">
+                            <h3>
+                                {appContext.languages[appContext.language].general.contact}
+                            </h3>
+                            <p className="grey-1-color" >
                                 R. Justino Cobra, 61 – Vila Ema | São José dos Campos – SP | CEP 12243-030 
                             </p>
                             <p className="grey-1-color">
@@ -66,8 +89,12 @@ function Footer() {
                         Copyright © DNC - 2024
                     </p>
                     <div className="langs-area d-flex">
-                        <img src={BrazilIcon} alt="Idioma da pagina em Portgues Brazil" height="29px" />
-                        <img src={UsaIcon} alt="Idioma da pagina em Ingles USA" height="29px" />
+                        <Button buttonStyle="unstyled" onClick={() => changeLanguage("br")}>
+                            <img src={BrazilIcon} alt="Idioma da pagina em Portgues Brazil" height="29px" />
+                        </Button>
+                        <Button buttonStyle="unstyled" onClick={() => changeLanguage("en")}> 
+                            <img src={UsaIcon} alt="Idioma da pagina em Ingles USA" height="29px" />
+                        </Button>
                     </div>
                 </div>
             </div>

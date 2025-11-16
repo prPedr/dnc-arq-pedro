@@ -1,15 +1,27 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { useContext } from "react"
 
 // PAGINAS
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Projects from "./pages/Projects"
-import Contatct from "./pages/Contact"
+import Contatct from "./pages/Contact" // <-- Verifique se o nome desse arquivo não é "Contact"
 
 // UTILS
 import ScrollTop from "./utils/ScrollTop"
 
+// CONTEXT
+import { AppContext } from "./contexts/AppContext.jsx" // <-- 1. IMPORTE O CONTEXTO
+
 function App() {
+  // 2. Use um nome de variável diferente (ex: appContext)
+  const appContext = useContext(AppContext)
+
+  // 3. Use a nova variável para checar o loading
+  if (appContext.loading) {
+    return "Loading..."
+  }
+
   return (
     <Router>
       <ScrollTop/>
