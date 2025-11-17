@@ -73,7 +73,7 @@ function Footer() {
                                 {appContext.languages[appContext.language].general.contact}
                             </h3>
                             <p className="grey-1-color" >
-                                R. Justino Cobra, 61 – Vila Ema | São José dos Campos – SP | CEP 12243-030 
+                                R. Justino Cobra, 61 - Vila Ema | São José dos Campos - SP | CEP 12243-030 
                             </p>
                             <p className="grey-1-color">
                                 suporte@escoladnc.com.br
