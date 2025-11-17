@@ -49,6 +49,7 @@
     pointer-events: none;
 }
 
-.unstyled {
-    background-color: white;
+.button.unstyled {
+    all: unset;
+    cursor: pointer;
 }

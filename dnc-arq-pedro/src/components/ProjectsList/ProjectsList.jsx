@@ -7,6 +7,9 @@ import "./ProjectsList.css"
 import BotaoLikeVazio from "../../assets/like-vazio.svg"
 import BotaoLikeCurtiu from "../../assets/like-curtiu.svg"
 
+// COMPONENTS
+import Button from "../Button/Button.jsx"
+
 // UTILS
 import { getApiData } from "../../services/apiServices"
 
@@ -15,6 +18,20 @@ import { AppContext } from "../../contexts/AppContext.jsx"
 
 function ProjectsList() {
     const [projects, setProjects] = useState([])
+    const [favProjects, setFavProject] = useState([])
+
+    const handleSavedFavProjects = (id) => {
+            setFavProject((prevFavProjects) => {
+                if (prevFavProjects.includes(id)) {
+                    const filterArray = prevFavProjects.filter((projectId) => projectId !== id)
+                    sessionStorage.setItem("favProjects", JSON.stringify(filterArray))
+                    return prevFavProjects.filter((projectId) => projectId !== id)
+                } else {
+                    sessionStorage.setItem("favProjects", JSON.stringify(...prevFavProjects, id))
+                    return [...prevFavProjects, id]
+                }
+            })
+        }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,6 +44,13 @@ function ProjectsList() {
         }
 
         fetchData()
+    }, [])
+
+    useEffect(() => {
+        const savedFavProjects = JSON.parse(sessionStorage.getItem("favProjects"))
+        if (savedFavProjects) {
+            setFavProject(savedFavProjects)
+        }
     }, [])
 
     const appContext = useContext(AppContext)
@@ -47,7 +71,9 @@ function ProjectsList() {
                                 <div className="thumb tertiary-background" style={{ backgroundImage: `url(${project.thumb})`}}></div>
                                 <h3>{project.title}</h3>
                                 <p>{project.subtitle}</p>
-                                <img src={BotaoLikeVazio} alt="Botão de gostei do projeto" height="20px" />
+                                <Button buttonStyle="unstyled" onClick={() => handleSavedFavProjects(project.id)}>
+                                    <img src={favProjects.includes(project.id) ?  BotaoLikeCurtiu : BotaoLikeVazio } alt="Botão de gostei do projeto" height="20px" />
+                                </Button>
                             </div>
                         ))
                     : null
