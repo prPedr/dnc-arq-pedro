@@ -3,7 +3,8 @@ import { AppContext } from "./AppContext"
 import { getApiData } from "../services/apiServices.js"
 
 export const AppProvider = ({ children }) => {
-    const [language, setLanguage] = useState("br")
+    const savedLanguage = localStorage.getItem("lang")
+    const [language, setLanguage] = useState(savedLanguage ?? "br")
     const [languages, setLanguages] = useState()
     const [loading, setLoading] = useState(true)
 
@@ -20,6 +21,10 @@ export const AppProvider = ({ children }) => {
         }
         fetchLanguages()
     }, [])
+
+    useEffect(() => {
+        localStorage.setItem("lang", language)
+    }, [language])
 
     return (
         <AppContext.Provider value={{ language, languages, setLanguage, loading }}>
