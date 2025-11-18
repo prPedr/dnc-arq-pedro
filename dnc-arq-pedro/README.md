@@ -1,16 +1,102 @@
-# React + Vite
+# 📘 Guia Completo --- Desenvolvimento de um Projeto React a partir do Figma
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém todo o material desenvolvido durante a criação
+de um site profissional utilizando **React.js**, seguindo um fluxo real
+de trabalho: desde a análise do design no **Figma**, até a implementação
+final do projeto.
 
-Currently, two official plugins are available:
+O objetivo deste ebook/guia é proporcionar uma experiência prática
+completa, ideal tanto para estudantes quanto para profissionais que
+desejam entender como funciona o processo moderno de desenvolvimento
+front-end.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+------------------------------------------------------------------------
 
-## React Compiler
+## 📑 Sumário
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1.  Apresentação do Projeto\
+2.  Entendendo o Figma\
+3.  Estrutura do Projeto\
+4.  Componentes Principais\
+5.  Páginas do Site\
+6.  Conclusão e Próximos Passos
 
-## Expanding the ESLint configuration
+------------------------------------------------------------------------
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 1. Apresentação do Projeto
+
+O projeto consiste em um **site de arquitetura**, ideal para portfólio e
+estudos. Ele demonstra técnicas fundamentais de React, componentização,
+estilização modular e integração com design profissional.
+
+## 1.1 Objetivos do Projeto
+
+-   Criar um site moderno e totalmente responsivo\
+-   Implementar múltiplas páginas com navegação\
+-   Desenvolver componentes reutilizáveis\
+-   Criar interações como curtidas e seleção de idioma\
+-   Reproduzir fielmente o design do Figma\
+-   Simular um fluxo real de desenvolvimento profissional
+
+## 1.2 Tecnologias Utilizadas
+
+-   **React.js**\
+-   **CSS modular**\
+-   **Figma**\
+-   **Vercel**
+
+------------------------------------------------------------------------
+
+# 2. Entendendo o Figma
+
+O Figma funciona como a ponte de comunicação entre designers e
+desenvolvedores.
+
+## 2.1 Importância do Figma
+
+-   Paleta de cores\
+-   Tipografia\
+-   Espaçamentos\
+-   Componentes reutilizáveis\
+-   Estados de interação
+
+## 2.2 O Arquivo do Figma Inclui
+
+-   Style guide\
+-   Componentes\
+-   Páginas completas\
+-   Versão mobile\
+-   Tela de loading
+
+------------------------------------------------------------------------
+
+# 3. Estrutura do Projeto
+
+    src/
+    |-- components/
+    |-- pages/
+    |-- styles/
+    |-- utils/
+    |-- App.js
+    |-- index.js
+
+------------------------------------------------------------------------
+
+# 4. Componentes Principais
+
+-   Header\
+-   Hero\
+-   ProjectCard\
+-   Footer\
+-   Banner\
+-   ContactForm
+
+------------------------------------------------------------------------
+
+# 5. Páginas do Site
+
+-   Home\
+-   Sobre Nós\
+-   Projetos\
+-   Contato
+
